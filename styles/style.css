@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -48,4 +51,87 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: min-content 399px;  /* ТУТ НАДО БУДЕТ ПОМЕНЯТЬ 2-ОЙ РАЗМЕР */
+  grid-template-rows: auto;
+  grid-template-areas: "left right";
+  grid-auto-flow: row; /* НАВЕРНОЕ ДАЖЕ НЕ НУЖЕН */
+  align-items: end;
+  padding: 0 30px;
+  gap: 30px;
+}
+
+.result {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+}
+
+.content__details {
+  grid-area: right;
+  
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content__details {
+  max-height: 534px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  
+}
+
+.content__list-container {
+  max-height: 298px;
+  overflow-y: auto;
+}
+
+.result__video-container {
+  min-width: 711px;
+  min-height: 386px;
+}
+
+.result__video {
+  width: 711px;
+  height: 386px;
+  object-fit: cover;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+ /* justify-content: space-between; */
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  max-height: 103px;
+  object-fit: cover;
+  object-position: center;
+  flex-grow: 0;
 }
