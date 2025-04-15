@@ -192,7 +192,7 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 55px;
+  gap: 15px;
 }
 
 .search-form__fieldset {
@@ -228,4 +228,26 @@ ol {
 
 .search-form__textfield:focus {
   outline: none;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked + span::after {
+  content: "";
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+}
+
+.search-form__checkbox-list > .search-form__label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
