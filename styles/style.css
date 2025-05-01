@@ -55,10 +55,10 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: min-content 399px;  /* ТУТ НАДО БУДЕТ ПОМЕНЯТЬ 2-ОЙ РАЗМЕР */
+  grid-template-columns: min-content min-content;
   grid-template-rows: auto;
   grid-template-areas: "left right";
-  grid-auto-flow: row; /* НАВЕРНОЕ ДАЖЕ НЕ НУЖЕН */
+  grid-auto-flow: row; 
   align-items: end;
   padding: 0 30px;
   gap: 30px;
@@ -69,12 +69,10 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
 }
 
 .content__details {
   grid-area: right;
-  
 }
 
 .search-form {
@@ -89,17 +87,18 @@ ol {
   flex-direction: column;
   justify-content: space-between;
   gap: 26px;
-  
 }
 
 .content__list-container {
+  position: relative;
   max-height: 298px;
   overflow-y: auto;
 }
 
 .result__video-container {
+  position: relative;
   min-width: 711px;
-  min-height: 386px;
+  height: 386px;
 }
 
 .result__video {
@@ -121,7 +120,6 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
-  
 }
 
 .content__video-card-thumbnail {
@@ -202,6 +200,10 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+}
+
+.search-form__label-text {
+  padding-left: 5px;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -289,4 +291,25 @@ input[type="checkbox"]:checked + span::after {
 .button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__list-item:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.content__list-item:focus {
+  outline: none;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #fff;
 }
